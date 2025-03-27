@@ -1,8 +1,5 @@
 def invertirString(cadena):
-    newCadena= ''
-    for i in range(len(cadena)-1, -1, -1):
-        newCadena += cadena[i]
-    return newCadena
+    print(cadena[::-1])  # Usamos slicing para invertir la cadena directamente
 
-newCadena = invertirString('Hello world')
-print(newCadena)
+cadena = 'LUIS FELIPE'
+invertirString(cadena)
