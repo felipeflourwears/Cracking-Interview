@@ -4,6 +4,7 @@ Solicita una frase al usuario y cuenta cuántas vocales (a, e, i, o, u) tiene.
 """
 
 frase=str(input("Dame una frase: "))
+
 vocales = ["a", "e", "i", "o", "u"]
 vocales_dic = {
     "a": 0,
@@ -12,14 +13,24 @@ vocales_dic = {
     "o": 0,
     "u": 0
 }
-print(vocales_dic["a"])
 
-try:
-    for i in range(0, len(frase), 1):
-        if(frase[i] in vocales):
-            print(frase[i])
-            vocales_dic[i]+=1
-    print(vocales_dic)
-except ValueError as e:
-    print("Error: ", e)
+def contar_vocales(frase):
+    frase = frase.lower()
+    try:
+        for i in range(0, len(frase), 1):
+            if frase[i] in vocales:
+                letter = frase[i]
+                vocales_dic[letter] += 1
+
+        print(vocales_dic)
+
+        for i in vocales_dic:
+            print("Letra:", i, "Cantidad:", vocales_dic[i])
+
+    except Exception as e:
+        raise ValueError("La frase no puede estar vacía")
+
+
+
+contar_vocales(frase)
     
